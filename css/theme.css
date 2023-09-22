@@ -7,3 +7,10 @@
     --color-text-bse: #161c2d;
     --border: #383f52;
 }
+
+.hero-bg {
+    background-image: url(../assets/img/hero-pattern.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
