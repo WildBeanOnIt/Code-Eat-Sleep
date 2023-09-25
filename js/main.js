@@ -12,6 +12,7 @@ const modalClose = '[data-close]';
 const isVisible = "is-visible"
 
 const dataFilter = "[data-filter]";
+const portfolioData = "[data-item]";
 
 const root = document.documentElement;
 
@@ -22,6 +23,8 @@ const currentTheme = localStorage.getItem(theme);
 
 // !Portfolio
 const filterLink = document.querySelectorAll(dataFilter);
+const portfolioItems = document.querySelectorAll(portfolioData);
+const searchBox = document.querySelector("#search");
 
 
 //! Modal
@@ -76,9 +79,31 @@ for (const elm of switcher) {
     })
 };
 
+searchBox.addEventListener('keyup', (e) => {
+    const searchInput = e.target.value.toLowerCase().trim();
+
+    portfolioItems.forEach((card) => {
+        if (card.dataset.item.includes(searchInput)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    })
+});
+
 for (const link of filterLink) {
     link.addEventListener('click', function() {
-        setActive(link, '.filter-link')
+        setActive(link, '.filter-link');
+        const filter = this.dataset.filter;
+        portfolioItems.forEach((card) => {
+            if (filter === "all") {
+                card.style.display = "block";
+            } else if (card.dataset.item === filter) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        })
     })
 };
 
@@ -92,6 +117,21 @@ for (const elm of openModal) {
 
 for (const elm of closeModal) {
     elm.addEventListener('click', function() {
-        this.parentElement.parentElement.classList.remove(isVisible)
+        this.parentElement.parentElement.parentElement.classList.remove(isVisible)
     })
 };
+
+//modal 
+document.addEventListener('click', (e) => {
+    console.log(e.target, document.querySelector(".modal.is-visible"));
+    if (e.target === document.querySelector(".modal.is-visible")) {
+        document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+});
+
+document.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    if (e.key === "Escape") {
+        document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+});
