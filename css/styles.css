@@ -463,12 +463,12 @@
 .slide-ctrl-container button:nth-child(1) { padding-right: 10px; }
 .slide-ctrl-container button:nth-child(2) { padding-left: 10px; }
 
-@media (max-width: 600px) {
+@media (max-width: 450px) {
     .portfolio-section .search-container{
         text-align: center;
     }
 
-    .portfolio-section .ul-defaults-none .portfolio-filter-nav{
+    .portfolio-section .portfolio-filter-nav{
         justify-content: center;
     }
 }
