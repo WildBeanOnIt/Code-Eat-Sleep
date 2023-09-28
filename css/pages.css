@@ -138,7 +138,8 @@
         /* --marquee-height: 15vw; */
     }
 
-    #about .full-site-modal {
+    #about .full-site-modal,
+    #contact .full-site-modal {
         height: 100vh;
     }
 }
