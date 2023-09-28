@@ -23,4 +23,7 @@
     --color-text: #fff;
     --color-text-base: #161c2d;
     --border: #ced4da;
+    .search-container .fa-search {
+        color: var(--bg);
+    }
 }
