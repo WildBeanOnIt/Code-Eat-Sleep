@@ -463,7 +463,7 @@
 .slide-ctrl-container button:nth-child(1) { padding-right: 10px; }
 .slide-ctrl-container button:nth-child(2) { padding-left: 10px; }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .container .search-container{
         justify-content: center;
     }
