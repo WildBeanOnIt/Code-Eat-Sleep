@@ -137,4 +137,8 @@
         --marquee-elms-displayed: 2;
         /* --marquee-height: 15vw; */
     }
+
+    #about .full-site-modal {
+        height: 100vh;
+    }
 }
