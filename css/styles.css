@@ -89,6 +89,7 @@
     flex-flow: row nowrap;
     padding: 0.5rem 1rem;
     width: 100%;
+    align-items: center;
 }
 
 .navbar .navbar-nav {
